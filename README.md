@@ -4,7 +4,7 @@
 
 ---
 
-## 🌟 Features
+## Features
 
 - Automatically fetches the latest **Fastfetch** GitHub release.
 - Installs or updates the binary to `/usr/local/bin/fastfetch`.
@@ -14,7 +14,7 @@
 
 ---
 
-## 📦 Supported Platforms
+## Supported Platforms
 
 - Debian-based (Ubuntu, Debian ≥ 11 / 12)
 - Arch Linux / AUR
@@ -23,7 +23,7 @@
 
 ---
 
-## ⚙️ Installation & Usage
+## ⚙Installation & Usage
 
 ### 1. Clone the repo
 
