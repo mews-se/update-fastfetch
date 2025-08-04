@@ -23,10 +23,12 @@
 
 ---
 
-## ⚙Installation & Usage
+## Installation & Usage
 
-### 1. Clone the repo
+### 1. Clone the repo, then chmod +x for whichever platform you use
 
 ```bash
 git clone https://github.com/mews-se/update-fastfetch.git
 cd update-fastfetch
+chmod +x <whichever>.sh
+./<whichever>.sh
