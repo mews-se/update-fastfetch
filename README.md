@@ -1,34 +1,93 @@
-# update‑fastfetch
+# update-fastfetch
 
-**`update‑fastfetch`** is a lightweight shell script to automatically install, upgrade, or keep your Fastfetch binary up-to-date on supported Linux environments. Ideal for local machines or automated provisioning (e.g. servers or VMs).
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Debian%2FUbuntu%2FDietPi-lightgrey)
+![Arch](https://img.shields.io/badge/arch-amd64%20|%20armhf%20|%20arm64-green)
+![Shell](https://img.shields.io/badge/shell-bash-blue)
+
+**`update-fastfetch`** is a lightweight shell script to automatically install or upgrade **Fastfetch** to the latest release on supported Linux systems.
+
+It is designed to be simple, portable, and suitable for both manual use and automated provisioning (e.g. servers, VMs, or bootstrap scripts).
 
 ---
 
 ## Features
 
-- Automatically fetches the latest **Fastfetch** GitHub release.
-- Installs or updates the binary to `/usr/local/bin/fastfetch`.
-- Supports configuration backup and optional presets.
-- Optionally integrates with cron, systemd timers, or provisioning tools.
-- Logs actions and handles permissions gracefully.
+- Automatically fetches the latest **Fastfetch** release from GitHub
+- Detects system architecture automatically (amd64, armhf, arm64)
+- Downloads and installs the correct `.deb` package
+- Works when run as a normal user (uses `sudo` only when required)
+- Minimal dependencies (`curl`, `grep`)
+- Clear logging output with timestamps
 
 ---
 
 ## Supported Platforms
 
-- Debian-based (Ubuntu, Debian ≥ 11 / 12)
-- Arch Linux / AUR
-- Fedora, openSUSE, Alpine, and others with Fastfetch support  
-  *(note: only newer distros are supported via official prebuilt binaries; others may require source build)*
+Currently optimized for:
+
+- Debian-based systems (Debian, Ubuntu, DietPi)
+
+Architecture support:
+- `amd64`
+- `armhf` / `armv7l`
+- `arm64` / `aarch64`
+
+Other distributions may work if `.deb` packages are compatible.
 
 ---
 
 ## Installation & Usage
 
-### 1. Clone the repo, then chmod +x for whichever platform you use
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/mews-se/update-fastfetch.git
 cd update-fastfetch
-chmod +x <whichever>.sh
-./<whichever>.sh
+```
+
+### 2. Make the script executable
+
+```bash
+chmod +x updatefastfetch.sh
+```
+
+### 3. Run the script
+
+```bash
+./updatefastfetch.sh
+```
+
+> The script will automatically:
+> - Detect your system architecture
+> - Fetch the latest release
+> - Download and install/update Fastfetch
+
+---
+
+## Notes
+
+- You **do not need to run the script with sudo**  
+  It will elevate privileges automatically when installing.
+
+- If Fastfetch is already up-to-date, no changes will be made.
+
+- The script downloads packages to `/tmp` and cleans up automatically.
+
+---
+
+## Example Output
+
+```text
+[2026-04-01 20:38:35] Detected Fastfetch asset: linux-amd64.deb
+[2026-04-01 20:38:36] Resolved release URL: https://github.com/fastfetch-cli/fastfetch/releases/download/...
+[2026-04-01 20:38:36] Downloading package...
+[2026-04-01 20:38:38] Installing package via apt-get
+[2026-04-01 20:38:40] Fastfetch install/update complete
+```
+
+---
+
+## License
+
+MIT (or same as original project if applicable)
