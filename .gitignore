@@ -1,0 +1,7 @@
+# Logs and editor / OS noise
+*.log
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
