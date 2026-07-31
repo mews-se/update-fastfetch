@@ -1,6 +1,7 @@
 # update-fastfetch
 
 ![License](https://img.shields.io/badge/license-Unlicense-blue.svg)
+[![ShellCheck](https://github.com/mews-se/update-fastfetch/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/mews-se/update-fastfetch/actions/workflows/shellcheck.yml)
 ![Platform](https://img.shields.io/badge/platform-Debian%2FUbuntu%2FDietPi-lightgrey)
 ![Arch](https://img.shields.io/badge/arch-amd64%20|%20armv6l%20|%20armv7l%20|%20arm64-green)
 ![Shell](https://img.shields.io/badge/shell-bash-blue)
