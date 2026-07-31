@@ -95,7 +95,6 @@ main() {
     local latest_version
     local current_version
     local download_url
-    local temp_deb
 
     require_command curl
     require_command apt-get
@@ -123,7 +122,7 @@ main() {
 
     download_url="${RELEASE_BASE_URL}/download/fastfetch-${asset_name}"
     temp_deb="$(mktemp "/tmp/fastfetch_latest_XXXXXX_${asset_name}")"
-    trap 'rm -f "$temp_deb"' EXIT
+    trap 'rm -f "${temp_deb:-}"' EXIT
 
     log "Downloading package to ${temp_deb}"
     curl "${CURL_OPTS[@]}" "$download_url" -o "$temp_deb"
