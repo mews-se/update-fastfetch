@@ -1,10 +1,10 @@
 # update-fastfetch
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![ShellCheck](https://github.com/mews-se/update-fastfetch/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/mews-se/update-fastfetch/actions/workflows/shellcheck.yml)
-![Platform](https://img.shields.io/badge/platform-Debian%2FUbuntu%2FDietPi-lightgrey)
-![Arch](https://img.shields.io/badge/arch-amd64%20|%20armv6l%20|%20armv7l%20|%20arm64-green)
-![Shell](https://img.shields.io/badge/shell-bash-blue)
+![Shell: Bash](https://img.shields.io/badge/shell-bash-4EAA25.svg?logo=gnubash&logoColor=white)
+![Platform: Debian based](https://img.shields.io/badge/platform-Debian%20based-A81D33.svg?logo=debian&logoColor=white)
+![Arch](https://img.shields.io/badge/arch-amd64%20%7C%20armv6l%20%7C%20armv7l%20%7C%20arm64-informational)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Keep fastfetch up to date on Debian. Fetches the latest release from GitHub
 and installs it, skips the download when you are already current. Works for
