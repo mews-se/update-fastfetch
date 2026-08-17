@@ -121,6 +121,12 @@ main() {
     fi
 
     download_url="${RELEASE_BASE_URL}/download/fastfetch-${asset_name}"
+    # a missing asset means upstream ships no build for this arch (the
+    # armv6l deb died after 2.48.1), fail clearly before touching anything
+    if ! curl "${CURL_OPTS[@]}" -o /dev/null -I "$download_url"; then
+        echo "Error: the latest release has no fastfetch-${asset_name}, upstream ships no build for this architecture." >&2
+        exit 1
+    fi
     temp_deb="$(mktemp "/tmp/fastfetch_latest_XXXXXX_${asset_name}")"
     trap 'rm -f "${temp_deb:-}"' EXIT
 

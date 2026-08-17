@@ -3,7 +3,7 @@
 [![ShellCheck](https://github.com/mews-se/update-fastfetch/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/mews-se/update-fastfetch/actions/workflows/shellcheck.yml)
 ![Shell: Bash](https://img.shields.io/badge/shell-bash-4EAA25.svg?logo=gnubash&logoColor=white)
 ![Platform: Debian based](https://img.shields.io/badge/platform-Debian%20based-A81D33.svg?logo=debian&logoColor=white)
-![Arch](https://img.shields.io/badge/arch-amd64%20%7C%20armv6l%20%7C%20armv7l%20%7C%20arm64-informational)
+![Arch](https://img.shields.io/badge/arch-amd64%20%7C%20armv7l%20%7C%20arm64-informational)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Keep fastfetch up to date on Debian. Fetches the latest release from GitHub
@@ -14,8 +14,9 @@ manual runs as well as provisioning and cron.
 
 - Installs or upgrades fastfetch to the latest GitHub release
 - Skips the download entirely when the installed version is up to date
-- Detects the architecture (amd64, armv6l, armv7l, arm64), including
-  Pi Zero/1 that report armhf but only run armv6
+- Detects the architecture (amd64, armv7l, arm64), including Pi Zero/1
+  that report armhf but only run armv6 - upstream currently ships no
+  armv6l build, so those machines get a clear error
 - Runs as a normal user (sudo only when installing) or as root
 - Only needs curl, apt-get and mktemp
 
