@@ -18,7 +18,7 @@ manual runs as well as provisioning and cron.
   that report armhf but only run armv6 - upstream currently ships no
   armv6l build, so those machines get a clear error
 - Runs as a normal user (sudo only when installing) or as root
-- Only needs curl, apt-get and mktemp
+- Only needs curl, apt-get, dpkg and mktemp
 
 Debian, Ubuntu, DietPi and Raspberry Pi OS are the tested targets. Other
 distributions may work if they take .deb packages.

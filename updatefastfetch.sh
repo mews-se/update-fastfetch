@@ -98,6 +98,8 @@ main() {
 
     require_command curl
     require_command apt-get
+    require_command dpkg
+    require_command dpkg-query
     require_command mktemp
     if [[ -n "$SUDO" ]]; then
         require_command sudo
@@ -109,8 +111,10 @@ main() {
     latest_version="$(fetch_latest_version)"
     current_version="$(installed_version)"
 
-    if [[ -n "$current_version" && "$current_version" = "$latest_version" ]]; then
-        log "Fastfetch ${current_version} is already the latest version, nothing to do"
+    # compare properly rather than by string: a yanked release can leave the
+    # latest tag behind what is installed, and apt refuses to downgrade anyway
+    if [[ -n "$current_version" ]] && dpkg --compare-versions "$current_version" ge "$latest_version"; then
+        log "Fastfetch ${current_version} is current (latest release is ${latest_version}), nothing to do"
         return 0
     fi
 
