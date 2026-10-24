@@ -15,10 +15,10 @@ manual runs as well as provisioning and cron.
 - Installs or upgrades fastfetch to the latest GitHub release
 - Skips the download entirely when the installed version is up to date
 - Detects the architecture (amd64, armv7l, arm64), including Pi Zero/1
-  that report armhf but only run armv6 - upstream currently ships no
+  that report armhf but only run armv6; upstream currently ships no
   armv6l build, so those machines get a clear error
 - Runs as a normal user (sudo only when installing) or as root
-- Only needs curl, apt-get, dpkg and mktemp
+- Only needs curl, apt-get, dpkg and mktemp, plus sudo when not run as root
 
 Debian, Ubuntu, DietPi and Raspberry Pi OS are the tested targets. Other
 distributions may work if they take .deb packages.
